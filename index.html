@@ -1,5 +1,472 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ôn luyện cùng Tú</title><style>:root{font-family:system-ui,Arial;background:#f3f6fa;color:#162438}*{box-sizing:border-box}body{margin:0}header{background:#115c4b;color:white;padding:18px 16px}header h1{font-size:22px;margin:0}header small{opacity:.9}main{max-width:850px;margin:16px auto;padding:0 12px}.panel{background:white;border-radius:14px;padding:18px;margin-bottom:14px;box-shadow:0 2px 10px #18344912}nav{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}button,select,input{font:inherit}button{border:0;border-radius:9px;background:#176c59;color:white;padding:10px 14px;cursor:pointer}button.secondary{background:#e8f0ed;color:#124b3e}button:disabled{opacity:.45}nav button.active{background:#103f35}input,select{padding:10px;border:1px solid #cbd5df;border-radius:8px;max-width:100%}label{display:inline-flex;align-items:center;gap:6px;margin:6px 8px 6px 0}h2{font-size:19px;margin:0 0 12px}.muted{color:#64748b}.hidden{display:none}.answer{display:block;width:100%;text-align:left;margin:8px 0;background:#f1f5f9;color:#172638;border:1px solid #dce3eb}.answer.selected{border-color:#137c61;background:#d9f6ea}.answer.wrong{border-color:#b42318;background:#ffebe8}.answer.correct{border-color:#16803f;background:#dcfce7}.stats{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.chip{background:#e8eef5;border-radius:20px;padding:5px 10px;font-size:13px}.question{font-size:19px;line-height:1.5;margin:15px 0}.listitem{display:block;width:100%;margin:7px 0;text-align:left;background:#eef3f8;color:#213246}.listitem.bad{background:#ffddd7}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.note{padding:10px;border-radius:8px;background:#fff5d8;color:#674b11}.good{color:#12603d}.badtext{color:#a32119}textarea{width:100%;min-height:100px}footer{text-align:center;padding:18px;color:#64748b;font-size:12px}
-:root{background:#f6f5f7;color:#22232a}body{background:#f6f5f7}header{background:linear-gradient(115deg,#730d2c,#941437 75%,#6b0c28);padding:22px max(18px,calc((100vw - 1060px)/2));border-bottom:3px solid #c7a267}header h1{font-size:clamp(23px,4.6vw,34px);letter-spacing:.04em}header small{font-size:13px;letter-spacing:.17em;text-transform:uppercase}main{max-width:1060px;margin:0 auto;padding:0 16px}.panel{border:1px solid #eee6e9;border-radius:20px;padding:clamp(18px,4vw,28px);box-shadow:0 5px 18px #380d2210;margin:18px 0}nav{background:#fff;margin:0 -16px 20px;padding:10px 16px;display:flex;flex-wrap:nowrap;overflow-x:auto;gap:5px;border-bottom:1px solid #eee8eb;scrollbar-width:thin}nav button{background:transparent;color:#606068;white-space:nowrap;flex:0 0 auto;font-weight:650;border-radius:12px;padding:13px 14px;font-size:14px}nav button.active{background:#f8e8ed;color:#82112f}button{background:#84112f;border-radius:11px;font-weight:600}button.secondary{background:#f6e7eb;color:#811631}button:hover{filter:brightness(.96)}input,select{border-color:#ded8dd;background:#fff}h2{font-size:clamp(22px,4vw,30px)}.answer{background:#fff;border-color:#e5e1e4;border-radius:14px;padding:15px;line-height:1.55}.answer.selected{background:#fbeaf0;border-color:#971538}.chip{background:#f7e7ed;color:#77142f}.listitem{background:#f9f6f7;border:1px solid #eee7e9}.note{background:#fff7e6;color:#695021}.home-eyebrow{color:#8d1537;font-weight:800;letter-spacing:.14em;font-size:12px}.home-lead{font-size:clamp(26px,5vw,40px);line-height:1.2;margin:12px 0}.home-sub{color:#62636b;line-height:1.6}.home-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:24px 0}.home-stat{border:1px solid #eee5e8;background:#fff;border-radius:16px;padding:17px 13px;box-shadow:0 4px 12px #310c1b0a}.home-stat small{display:block;color:#66636b;font-size:12px;min-height:34px}.home-stat strong{display:block;color:#84112f;font-size:clamp(20px,4.5vw,32px);margin-top:8px}.home-banner{background:linear-gradient(115deg,#8c1034,#6b0b29);color:white;border-radius:20px;padding:26px 23px;margin:20px 0}.home-banner h3{font-size:clamp(24px,5vw,36px);line-height:1.25;margin:10px 0}.home-banner p{line-height:1.6;color:#fbe7ee}.home-banner button{background:#fff;color:#80122f}.home-quick{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.home-quick button{background:#f9e9ee;color:#80122f;min-height:70px}.home-progress{height:11px;background:#eae6e8;border-radius:30px;overflow:hidden}.home-progress>div{height:100%;background:#8e1236;width:0}footer{color:#85818a}@media(min-width:650px){.home-quick{grid-template-columns:repeat(4,1fr)}nav{justify-content:center}nav button{font-size:15px}}@media(max-width:390px){.home-stats{gap:6px}.home-stat{padding:12px 9px}.home-stat small{font-size:11px}}
-</style></head><body><header><h1>ÔN LUYỆN CÙNG TÚ</h1><small>NGHIỆP VỤ NGÂN HÀNG</small></header><main><nav id="nav"><button data-tab="home" class="active">01 &nbsp; Tổng quan</button><button data-tab="practice">02 &nbsp; Ôn luyện</button><button data-tab="exam">03 &nbsp; Thi thử</button><button data-tab="list">04 &nbsp; Câu hỏi</button><button data-tab="admin">05 &nbsp; Quản trị</button></nav><section id="home" class="panel"><div class="home-eyebrow">HỌC CHỦ ĐỘNG • VỮNG NGHIỆP VỤ</div><h2 class="home-lead">Sẵn sàng cho kỳ kiểm tra</h2><p class="home-sub">Ôn luyện hằng ngày, kiểm tra kiến thức và theo dõi tiến bộ của anh.</p><div class="home-stats"><div class="home-stat"><small>Ngân hàng câu hỏi</small><strong id="homeTotal">0</strong></div><div class="home-stat"><small>Đã luyện tập</small><strong id="homeDone">0</strong></div><div class="home-stat"><small>Lượt thi hoàn thành</small><strong id="homeExams">0</strong></div></div><div class="home-banner"><div class="home-eyebrow" style="color:#f6c9d8">THỬ SỨC HÔM NAY</div><h3>Mỗi lần thi,<br>một bước tiến mới.</h3><p>Chọn câu hỏi ngẫu nhiên, làm bài, xem kết quả và ôn lại kiến thức.</p><button onclick="document.querySelector('[data-tab=exam]').click()">Bắt đầu thi thử →</button></div><h2>Tùy chọn nhanh</h2><div class="home-quick"><button onclick="document.querySelector('[data-tab=practice]').click()">◫ Ôn luyện kiến thức</button><button onclick="document.querySelector('[data-tab=exam]').click()">▤ Thi thử ngẫu nhiên</button><button onclick="document.querySelector('[data-tab=list]').click()">◎ Câu sai & đánh dấu</button><button onclick="document.querySelector('[data-tab=admin]').click()">⇧ Cập nhật câu hỏi</button></div><p id="count" class="muted" style="margin-top:22px"></p><div class="note">Dữ liệu nhập trên phiên bản này chỉ lưu trong trình duyệt đang sử dụng, chưa đồng bộ cho người dùng khác. Để quản trị bằng mật khẩu và cập nhật chung cho mọi người, cần kết nối dịch vụ xác thực và cơ sở dữ liệu.</div></section><section id="practice" class="panel hidden"><h2>Ôn luyện</h2><div class="row"><label>Số câu <select id="limit"><option value="all">Toàn bộ</option><option value="10">10</option><option value="20">20</option><option value="50">50</option></select></label><label>Chuyển câu <select id="advance"><option value="0">Thủ công</option><option value="2">Sau 2 giây</option><option value="5">Sau 5 giây</option></select></label><label><input id="repeat" type="checkbox" checked>Lặp lại câu sai</label><button id="startPractice">Bắt đầu</button></div><div id="practiceArea"></div></section><section id="exam" class="panel hidden"><h2>Thi thử</h2><div class="row"><label>Số câu <select id="examLimit"><option value="all">Toàn bộ</option><option value="10">10</option><option value="20">20</option><option value="50">50</option></select></label><label>Thời gian (phút) <input id="minutes" type="number" min="1" max="240" value="60" style="width:80px"></label><button id="startExam">Bắt đầu thi</button></div><div id="examArea"></div></section><section id="list" class="panel hidden"><h2>Danh sách câu hỏi</h2><input id="search" placeholder="Tìm nội dung câu hỏi" style="width:100%"><div id="questionList"></div></section><section id="admin" class="panel hidden"><h2>Quản trị câu hỏi</h2><p class="note">Lưu ý: đây là công cụ nhập dữ liệu cục bộ, không phải đăng nhập quản trị bảo mật. Không đưa mật khẩu thật hoặc dữ liệu nhạy cảm lên mã nguồn GitHub công khai.</p><p><strong>Nhập Excel (.xlsx, .xls) hoặc JSON</strong></p><input id="file" type="file" accept=".xlsx,.xls,.json"><p class="muted">Cột Excel: Câu hỏi, A, B, C, D, Đáp án (A hoặc A,C). Có thể dùng các cột Question, Option A... và Answer.</p><div class="row"><button id="export">Xuất dữ liệu JSON</button><button id="template" class="secondary">Tải mẫu CSV mở bằng Excel</button><button id="clear" class="secondary">Xóa bộ câu hỏi trên máy này</button></div><p id="importStatus"></p><h3>Thêm câu hỏi thủ công</h3><form id="addForm"><p><input name="q" placeholder="Nội dung câu hỏi" required style="width:100%"></p><p><input name="a" placeholder="Đáp án A" required> <input name="b" placeholder="Đáp án B" required></p><p><input name="c" placeholder="Đáp án C" required> <input name="d" placeholder="Đáp án D" required></p><p><input name="correct" placeholder="Đáp án đúng, ví dụ A hoặc A,C" required></p><button type="submit">Thêm câu hỏi</button></form></section></main><footer>Ôn luyện cùng Tú • Phiên bản thử nghiệm GitHub Pages</footer><script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script><script>
-const KEY='onluyencungtu_questions_v1';let questions=JSON.parse(localStorage.getItem(KEY)||'[]'),wrong=new Set(JSON.parse(localStorage.getItem('onluyencungtu_wrong')||'[]')),session=null,timer=null,delay=null;const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));function save(){localStorage.setItem(KEY,JSON.stringify(questions));$('count').textContent=`Hiện có ${questions.length} câu hỏi trên thiết bị này.`;$('homeTotal').textContent=questions.length.toLocaleString('vi-VN');$('homeDone').textContent=localStorage.getItem('onluyencungtu_done_count')||'0';$('homeExams').textContent=localStorage.getItem('onluyencungtu_exam_count')||'0';renderList()}function normalize(row){const get=(...names)=>{for(let n of names){let k=Object.keys(row).find(k=>k.trim().toLowerCase()===n.toLowerCase());if(k&&row[k]!=null)return String(row[k]).trim()}return ''};let q=get('Câu hỏi','CÂU HỎI','Question','Nội dung câu hỏi'),opts=[get('A','Đáp án 1','Option A'),get('B','Đáp án 2','Option B'),get('C','Đáp án 3','Option C'),get('D','Đáp án 4','Option D')],ans=get('Đáp án','Đáp án đúng','Answer','Correct').toUpperCase().replace(/[;\s]+/g,',').split(',').filter(x=>/^[ABCD]$/.test(x));if(!ans.length){let nums=get('Đáp án đúng','Answer').match(/[1-4]/g);if(nums)ans=nums.map(n=>'ABCD'[Number(n)-1])}return q&&opts.every(Boolean)&&ans.length?{id:crypto.randomUUID(),q,opts,ans}:null}function tab(name){clearTimeout(delay);document.querySelectorAll('main>section').forEach(s=>s.classList.toggle('hidden',s.id!==name));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));if(name==='list')renderList()}document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>tab(b.dataset.tab));function sample(n){let arr=[...questions];for(let i=arr.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}return n==='all'?arr:arr.slice(0,Number(n))}function time(s){return `${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`}function stop(){clearInterval(timer);clearTimeout(delay)}function begin(mode){stop();if(!questions.length){alert('Chưa có câu hỏi. Vui lòng nhập dữ liệu ở mục Quản trị.');return}let isExam=mode==='exam';session={mode,queue:sample($(isExam?'examLimit':'limit').value),index:0,elapsed:0,remaining:Math.max(1,Number($('minutes').value)||60)*60,attempts:{},correct:0,answers:{},finished:false,locked:false};timer=setInterval(()=>{if(!session||session.finished)return;if(isExam){session.remaining--;if(session.remaining<=0){finish();return}}else session.elapsed++;let t=$('clock');if(t)t.textContent=time(isExam?session.remaining:session.elapsed)},1000);renderQuestion()}function current(){return session.queue[session.index]}function renderQuestion(){if(!session||session.finished)return;let s=session,q=current(),area=$(s.mode==='exam'?'examArea':'practiceArea');s.locked=false;let previous=s.answers[q.id]||[];area.innerHTML=`<div class="stats"><span class="chip">Câu ${s.index+1}/${s.queue.length}</span><span class="chip">Thời gian: <b id="clock">${time(s.mode==='exam'?s.remaining:s.elapsed)}</b></span><span class="chip">Lượt câu này: ${(s.attempts[q.id]||0)+1}</span></div><div class="question">${esc(q.q)}</div>${q.opts.map((o,i)=>`<button class="answer ${previous.includes('ABCD'[i])?'selected':''}" data-answer="${'ABCD'[i]}"><b>${'ABCD'[i]}.</b> ${esc(o)}</button>`).join('')}<p id="feedback" aria-live="polite"></p><div class="row"><button id="check">${s.mode==='exam'?'Lưu câu trả lời':'Kiểm tra đáp án'}</button><button class="secondary" id="next">${s.index===s.queue.length-1?'Hoàn thành':'Câu tiếp theo'}</button></div>`;let selected=new Set(previous);area.querySelectorAll('[data-answer]').forEach(b=>b.onclick=()=>{if(s.locked)return;let a=b.dataset.answer;if(selected.has(a))selected.delete(a);else selected.add(a);area.querySelectorAll('[data-answer]').forEach(x=>x.classList.toggle('selected',selected.has(x.dataset.answer)))});$('check').onclick=()=>{if(s.locked)return;if(!selected.size){$('feedback').textContent='Hãy chọn ít nhất một đáp án.';return}let a=[...selected].sort(),ok=a.join(',')===[...q.ans].sort().join(',');s.answers[q.id]=a;s.attempts[q.id]=(s.attempts[q.id]||0)+1;s.locked=true;if(s.mode==='practice'){if(ok){s.correct++;wrong.delete(q.id)}else{wrong.add(q.id);if($('repeat').checked)s.queue.push(q)}localStorage.setItem('onluyencungtu_wrong',JSON.stringify([...wrong]));$('feedback').innerHTML=ok?'<span class="good">Chính xác!</span>':`<span class="badtext">Chưa đúng. Đáp án: ${esc(q.ans.join(', '))}. Câu này sẽ được luyện lại nếu bật lặp câu sai.</span>`;area.querySelectorAll('[data-answer]').forEach(b=>b.classList.toggle('correct',q.ans.includes(b.dataset.answer)));let sec=Number($('advance').value);if(sec)delay=setTimeout(next,sec*1000)}else $('feedback').textContent='Đã lưu đáp án. Bấm Câu tiếp theo.'};$('next').onclick=next}function next(){clearTimeout(delay);if(!session)return;session.index++;if(session.index>=session.queue.length)finish();else renderQuestion()}function finish(){if(!session)return;stop();let s=session;s.finished=true;let score=s.mode==='exam'?s.queue.filter(q=>(s.answers[q.id]||[]).sort().join(',')===[...q.ans].sort().join(',')).length:s.correct;$(s.mode==='exam'?'examArea':'practiceArea').innerHTML=`<h3>Hoàn thành!</h3><p>Đúng ${score}/${s.queue.length} lượt câu hỏi. Thời gian ${time(s.mode==='exam'?(Math.max(1,Number($('minutes').value)||60)*60-s.remaining):s.elapsed)}.</p><button onclick="begin('${s.mode}')">Làm lại</button>`}function renderList(){let root=$('questionList'),term=$('search').value.toLowerCase();root.innerHTML=questions.filter(q=>q.q.toLowerCase().includes(term)).map(q=>`<div class="panel" style="border:1px solid #edf0f3"><b class="${wrong.has(q.id)?'badtext':''}">${esc(q.q)}</b>${q.opts.map((x,i)=>`<p style="margin:5px 0">${'ABCD'[i]}. ${esc(x)}</p>`).join('')}<small class="muted">Đúng: ${esc(q.ans.join(', '))}${wrong.has(q.id)?' • Cần ôn lại':''}</small><p><button class="secondary" data-remove="${q.id}">Xóa</button></p></div>`).join('')||'<p class="muted">Không có câu hỏi phù hợp.</p>';root.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{if(confirm('Xóa câu hỏi này?')){questions=questions.filter(q=>q.id!==b.dataset.remove);save()}})}$('search').oninput=renderList;$('startPractice').onclick=()=>begin('practice');$('startExam').onclick=()=>begin('exam');$('addForm').onsubmit=e=>{e.preventDefault();let f=new FormData(e.target),row={'Câu hỏi':f.get('q'),A:f.get('a'),B:f.get('b'),C:f.get('c'),D:f.get('d'),'Đáp án':f.get('correct')},q=normalize(row);if(!q){alert('Kiểm tra câu hỏi, 4 lựa chọn và đáp án A/B/C/D.');return}questions.push(q);save();e.target.reset();$('importStatus').textContent='Đã thêm câu hỏi trên thiết bị này.'};$('file').onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let rows;if(f.name.toLowerCase().endsWith('.json')){let data=JSON.parse(await f.text());rows=Array.isArray(data)?data:data.questions;if(!Array.isArray(rows))throw Error('JSON không phải danh sách câu hỏi');rows=rows.map(x=>x.q&&x.opts?{id:crypto.randomUUID(),q:x.q,opts:x.opts,ans:x.ans}:normalize(x)).filter(Boolean)}else{if(!window.XLSX)throw Error('Không tải được thư viện đọc Excel. Hãy kiểm tra Internet hoặc nhập JSON.');let book=XLSX.read(await f.arrayBuffer(),{type:'array'});rows=XLSX.utils.sheet_to_json(book.Sheets[book.SheetNames[0]],{defval:''}).map(normalize).filter(Boolean)}if(!rows.length)throw Error('Không tìm thấy câu hỏi hợp lệ. Kiểm tra tên các cột.');if(!confirm(`Nhập ${rows.length} câu hỏi? Bộ câu hỏi hiện có sẽ được thay thế trên trình duyệt này.`))return;questions=rows;save();$('importStatus').textContent=`Đã nhập ${rows.length} câu hỏi trên thiết bị này.`}catch(err){$('importStatus').textContent='Lỗi: '+err.message}};function download(name,data,type){let u=URL.createObjectURL(new Blob([data],{type})),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}$('export').onclick=()=>download('onluyencungtu-cauhoi.json',JSON.stringify(questions,null,2),'application/json');$('template').onclick=()=>download('mau-cau-hoi.csv','\ufeffCâu hỏi,A,B,C,D,Đáp án\n"Ví dụ: 2 + 2 bằng bao nhiêu?",1,2,3,4,D\n','text/csv;charset=utf-8');$('clear').onclick=()=>{if(confirm('Xóa toàn bộ câu hỏi lưu trên trình duyệt này?')){questions=[];save()}};save();
-</script></body></html>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ôn luyện cùng Tú</title>
+<style>
+:root{--red:#80213f;--dark:#58142c;--bg:#f8f4f6;--line:#eadce2}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#29242a;font:15px/1.5 Arial,sans-serif}
+header{background:linear-gradient(110deg,var(--dark),var(--red));color:white;padding:20px 16px}
+header h1{margin:0;font-size:23px}
+header small{letter-spacing:2px}
+main{max-width:850px;margin:auto;padding:12px}
+nav{display:flex;gap:6px;overflow-x:auto;padding:8px 0}
+button,select,input{font:inherit}
+nav button{white-space:nowrap;border:1px solid var(--line);background:white;color:var(--red);padding:10px;border-radius:9px}
+nav button.active,.primary{background:var(--red)!important;color:white!important}
+.card{background:white;border:1px solid var(--line);border-radius:15px;padding:16px;margin:10px 0;box-shadow:0 3px 12px #5010270a}
+h2{font-size:20px;margin:0 0 12px}
+h3{font-size:16px}
+label{display:block;margin:12px 0 5px;font-weight:bold}
+select,input[type=text],input[type=password]{width:100%;padding:11px;border:1px solid #d8c9d0;border-radius:9px;background:white}
+button{cursor:pointer}
+.btn{border:1px solid var(--red);border-radius:9px;padding:11px 14px;background:white;color:var(--red);font-weight:bold}
+.primary{border-color:var(--red)}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.hide{display:none!important}
+.muted{color:#796e76;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat{background:#faf0f4;border-radius:10px;text-align:center;padding:12px 5px}
+.stat b{display:block;color:var(--red);font-size:22px}
+.stat small{font-size:11px}
+.clocks{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.clock{text-align:center;background:#faf0f4;border-radius:10px;padding:10px}
+.clock b{display:block;font-size:21px;color:var(--red)}
+.clock small{color:#786a72}
+.question{font-size:18px;font-weight:bold;margin:16px 0}
+.answer{width:100%;display:block;text-align:left;background:white;border:1px solid #ddd1d7;border-radius:10px;padding:12px;margin:7px 0}
+.answer.correct{background:#e5f6ec;border-color:#54a57c;color:#176c45}
+.answer.wrong{background:#ffe9ee;border-color:#d97991;color:#a12344}
+.answer:disabled{opacity:1}
+.pill{display:inline-block;background:#f8e8ee;color:var(--red);padding:5px 10px;border-radius:30px;font-size:12px}
+.numbers{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px;max-height:125px;overflow:auto}
+.num{min-width:35px;height:35px;background:white;border:1px solid #ddd;border-radius:7px}
+.num.bad{background:#ffdce5;color:#9c2440}
+.num.good{background:#ddf4e6;color:#176b45}
+.num.current{outline:2px solid var(--red)}
+.notice{padding:12px;border-radius:10px;background:#fff3d9;margin:10px 0}
+.feedback{background:#f9e9ee;color:var(--red);padding:10px;border-radius:9px;margin-top:10px}
+footer{text-align:center;color:#84757e;font-size:12px;padding:20px}
+@media(max-width:480px){
+main{padding:9px}.card{padding:13px}
+.question{font-size:16px;margin:12px 0}
+.answer{padding:10px;margin:6px 0}
+nav button{font-size:12px;padding:9px}
+}
+</style>
+</head>
+<body>
+<header>
+<h1>ÔN LUYỆN CÙNG TÚ</h1>
+<small>NGHIỆP VỤ NGÂN HÀNG</small>
+</header>
+<main>
+<nav id="nav">
+<button class="active" onclick="tab('home',this)">Tổng quan</button>
+<button onclick="tab('practice',this)">Ôn luyện</button>
+<button onclick="tab('exam',this)">Thi thử</button>
+<button onclick="tab('review',this)">Câu sai & Đánh dấu</button>
+<button onclick="tab('admin',this)">Quản trị</button>
+</nav>
+
+<section id="home">
+<div class="card">
+<span class="pill">Học tập mỗi ngày</span>
+<h2 style="margin-top:12px">Mỗi lần thi, một bước tiến mới</h2>
+<p>Ôn luyện theo chuyên đề, củng cố câu sai và theo dõi kết quả học tập.</p>
+<div class="actions">
+<button class="btn primary" onclick="go('practice')">Bắt đầu ôn luyện</button>
+<button class="btn" onclick="go('exam')">Thi thử</button>
+</div>
+</div>
+<div class="card">
+<h2>Tổng quan</h2>
+<div class="grid">
+<div class="stat"><b id="total">0</b><small>Câu hỏi</small></div>
+<div class="stat"><b id="seen">0</b><small>Đã luyện</small></div>
+<div class="stat"><b id="exams">0</b><small>Lượt thi</small></div>
+</div>
+</div>
+<div class="card">
+<h2>Danh sách chuyên đề</h2>
+<div id="topics"></div>
+</div>
+</section>
+
+<section id="practice" class="hide">
+<div class="card" id="pSetup">
+<h2>Thiết lập ôn luyện</h2>
+<label>Chuyên đề</label>
+<select id="pTopic"></select>
+<label>Số lượng câu hỏi</label>
+<select id="pCount">
+<option value="all">Toàn bộ (mặc định)</option>
+<option value="10">10 câu</option>
+<option value="20">20 câu</option>
+<option value="50">50 câu</option>
+<option value="100">100 câu</option>
+</select>
+<label>Chuyển câu sau khi trả lời</label>
+<select id="pAuto">
+<option value="2">Tự động sau 2 giây (mặc định)</option>
+<option value="5">Tự động sau 5 giây</option>
+<option value="0">Chuyển thủ công</option>
+</select>
+<label>Ôn lại câu sai sau</label>
+<select id="pRetry">
+<option value="5">5 câu khác (mặc định)</option>
+<option value="3">3 câu khác</option>
+<option value="10">10 câu khác</option>
+<option value="20">20 câu khác</option>
+<option value="end">Cuối lượt ôn</option>
+</select>
+<label><input type="checkbox" id="pRandom" checked> Trộn câu hỏi</label>
+<label><input type="checkbox" id="pClock" checked> Hiển thị hai đồng hồ</label>
+<div class="actions">
+<button class="btn primary" onclick="startPractice()">Bắt đầu ôn luyện</button>
+</div>
+</div>
+<div id="pRun" class="hide"></div>
+</section>
+
+<section id="exam" class="hide">
+<div class="card" id="eSetup">
+<h2>Thi thử</h2>
+<label>Chuyên đề</label>
+<select id="eTopic"></select>
+<label>Số câu hỏi</label>
+<select id="eCount">
+<option value="10">10 câu</option>
+<option value="20">20 câu</option>
+<option value="50">50 câu</option>
+<option value="all">Toàn bộ</option>
+</select>
+<label>Thời gian làm bài</label>
+<select id="eTime">
+<option value="10">10 phút</option>
+<option value="20">20 phút</option>
+<option value="30">30 phút</option>
+<option value="60">60 phút</option>
+</select>
+<div class="actions">
+<button class="btn primary" onclick="startExam()">Bắt đầu thi</button>
+</div>
+</div>
+<div id="eRun" class="hide"></div>
+</section>
+
+<section id="review" class="hide">
+<div class="card">
+<h2>Câu sai & Đánh dấu</h2>
+<div class="actions">
+<button class="btn" onclick="review('wrong')">Câu từng trả lời sai</button>
+<button class="btn" onclick="review('marked')">Câu đánh dấu</button>
+</div>
+<div id="reviewList"></div>
+</div>
+</section>
+
+<section id="admin" class="hide">
+<div class="card">
+<h2>Quản trị ngân hàng câu hỏi</h2>
+<div class="notice">
+<b>Chức năng quản trị chưa kích hoạt.</b>
+GitHub Pages không hỗ trợ đăng nhập và lưu ngân hàng câu hỏi bảo mật bằng HTML đơn thuần.
+Cần kết nối dịch vụ xác thực và cơ sở dữ liệu trước khi cho phép nhập Excel, sửa, xóa hoặc xuất câu hỏi.
+</div>
+<label>Tên đăng nhập</label>
+<input type="text" placeholder="Tài khoản Admin" disabled>
+<label>Mật khẩu</label>
+<input type="password" placeholder="Chưa kích hoạt" disabled>
+<div class="actions">
+<button class="btn primary" disabled>Đăng nhập</button>
+</div>
+<p class="muted">Bản hiện tại sử dụng câu hỏi minh họa, không chứa mật khẩu quản trị.</p>
+</div>
+</section>
+
+<footer>Ôn luyện cùng Tú · Phiên bản thử nghiệm</footer>
+</main>
+
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const DATA=[
+{id:1,t:"Tín dụng",q:"Mục đích quan trọng của thẩm định tín dụng là gì?",a:["Đánh giá khả năng trả nợ và rủi ro","Chỉ kiểm tra tên khách hàng","Tự động duyệt mọi khoản vay","Bỏ qua mục đích sử dụng vốn"],c:0},
+{id:2,t:"Tín dụng",q:"Kiểm tra sử dụng vốn vay nhằm mục đích gì?",a:["Xác định vốn được sử dụng đúng mục đích","Thay thế việc thẩm định","Không cần theo dõi khoản vay","Tự động tăng hạn mức"],c:0},
+{id:3,t:"Thẩm định",q:"Yếu tố nào quan trọng khi đánh giá khả năng trả nợ?",a:["Dòng tiền của khách hàng","Chỉ dựa vào doanh thu","Chỉ dựa vào số nhân viên","Không cần xem xét chi phí"],c:0},
+{id:4,t:"Thẩm định",q:"Khi phân tích báo cáo tài chính nên làm gì?",a:["Đối chiếu và đánh giá tính hợp lý","Chỉ xem một chỉ tiêu","Bỏ qua biến động","Chỉ dựa vào lời trình bày"],c:0},
+{id:5,t:"Xử lý nợ",q:"Khi khoản vay có dấu hiệu rủi ro cần làm gì?",a:["Theo dõi và xử lý theo quy định","Bỏ qua cảnh báo","Tự ý xóa dư nợ","Ngừng lưu hồ sơ"],c:0},
+{id:6,t:"Thanh toán quốc tế",q:"Trong thanh toán quốc tế cần chú ý điều gì?",a:["Kiểm tra chứng từ và điều kiện giao dịch","Bỏ qua điều khoản thanh toán","Không cần xác minh thông tin","Chỉ xem số tiền"],c:0},
+{id:7,t:"Kế hoạch & QLRR",q:"Mục tiêu của quản trị rủi ro là gì?",a:["Nhận diện, đánh giá và kiểm soát rủi ro","Loại bỏ mọi hoạt động kinh doanh","Chỉ lập báo cáo cuối năm","Không cần giám sát"],c:0},
+{id:8,t:"Kế hoạch & QLRR",q:"Khi theo dõi chỉ tiêu kinh doanh cần làm gì?",a:["So sánh thực hiện với kế hoạch và phân tích nguyên nhân","Chỉ xem số cuối năm","Bỏ qua biến động","Không cần đề xuất giải pháp"],c:0},
+{id:9,t:"Kế toán",q:"Đối chiếu số liệu kế toán nhằm mục đích gì?",a:["Phát hiện và xử lý chênh lệch","Thay thế mọi kiểm soát","Không cần chứng từ","Tự động xóa sai sót"],c:0},
+{id:10,t:"Kế toán",q:"Nguyên tắc quan trọng trong hạch toán là gì?",a:["Chính xác, đầy đủ và đúng quy định","Ghi nhận theo cảm tính","Bỏ qua chứng từ","Không cần kiểm tra"],c:0}
+];
+
+const KEY="onluyencungtu_progress_v2";
+let saved={seen:{},wrong:{},marked:{},exams:0};
+try{
+let old=JSON.parse(localStorage.getItem(KEY));
+if(old&&typeof old==="object")saved={...saved,...old};
+}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}}
+function fmt(s){
+s=Math.max(0,Math.floor(s));
+return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
+}
+function esc(s){
+return String(s).replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[x]));
+}
+function pool(t){return DATA.filter(x=>t==="all"||x.t===t)}
+function sample(a,n,shuffle=true){
+a=[...a];
+if(shuffle)for(let i=a.length-1;i>0;i--){
+let j=Math.floor(Math.random()*(i+1));
+[a[i],a[j]]=[a[j],a[i]];
+}
+return a.slice(0,n==="all"?a.length:Math.min(+n,a.length));
+}
+function tab(id,button){
+document.querySelectorAll("main section").forEach(x=>x.classList.add("hide"));
+$(id).classList.remove("hide");
+document.querySelectorAll("nav button").forEach(x=>x.classList.remove("active"));
+if(button)button.classList.add("active");
+if(id==="home")home();
+if(id==="review")review("wrong");
+window.scrollTo(0,0);
+}
+function go(id){
+let b=[...document.querySelectorAll("nav button")].find(x=>x.getAttribute("onclick").includes("'"+id+"'"));
+tab(id,b);
+}
+function home(){
+$("total").textContent=DATA.length;
+$("seen").textContent=Object.keys(saved.seen).length;
+$("exams").textContent=saved.exams;
+$("topics").innerHTML=[...new Set(DATA.map(x=>x.t))].map(t=>"<p><b>"+esc(t)+"</b> — "+pool(t).length+" câu</p>").join("");
+}
+function init(){
+let opts='<option value="all">Tất cả chuyên đề</option>'+
+[...new Set(DATA.map(x=>x.t))].map(t=>'<option value="'+esc(t)+'">'+esc(t)+'</option>').join("");
+$("pTopic").innerHTML=opts;
+$("eTopic").innerHTML=opts;
+home();
+}
+
+let P=null,E=null;
+
+function startPractice(){
+let arr=sample(pool($("pTopic").value),$("pCount").value,$("pRandom").checked);
+if(!arr.length)return alert("Chưa có câu hỏi");
+P={
+arr,queue:arr.map(q=>q.id),i:0,
+done:new Set(),wrong:new Set(),attempt:{},first:new Set(),
+start:Date.now(),qStart:Date.now(),pausedMs:0,
+auto:+$("pAuto").value,retry:$("pRetry").value,
+clock:$("pClock").checked,answered:false,nextAt:0,
+paused:false,pauseAt:0
+};
+$("pSetup").classList.add("hide");
+$("pRun").classList.remove("hide");
+renderP();
+}
+function currentP(){return DATA.find(x=>x.id===P.queue[P.i])}
+function renderP(){
+if(!P)return;
+if(P.i>=P.queue.length){finishP();return}
+let q=currentP(),p=P;
+p.answered=false;p.nextAt=0;p.qStart=Date.now();
+$("pRun").innerHTML=`
+<div class="card">
+<span class="pill">${esc(q.t)}</span>
+<p class="muted">Đã hoàn thành ${p.done.size}/${p.arr.length} câu · Lần trả lời: ${(p.attempt[q.id]||0)+1}</p>
+<div class="clocks" id="pClocks">
+<div class="clock"><small>Thời gian câu này</small><b id="qClock">00:00</b></div>
+<div class="clock"><small>Tổng thời gian ôn</small><b id="totalClock">00:00</b></div>
+</div>
+<div class="question">${esc(q.q)}</div>
+<div id="answers">
+${q.a.map((a,i)=>`<button class="answer" onclick="answerP(${i})"><b>${"ABCD"[i]}.</b> ${esc(a)}</button>`).join("")}
+</div>
+<div id="feedback"></div>
+<div class="actions">
+<button class="btn primary" id="nextP" onclick="nextP()" disabled>Tiếp theo</button>
+<button class="btn" id="markP" onclick="mark(${q.id})">${saved.marked[q.id]?"★ Đã đánh dấu":"☆ Đánh dấu"}</button>
+<button class="btn" id="pauseP" onclick="pauseP()">Tạm dừng</button>
+<button class="btn" onclick="finishP()">Kết thúc</button>
+</div>
+<h3>Danh sách câu hỏi</h3>
+<div class="numbers">
+${p.arr.map((x,i)=>`<button class="num ${p.wrong.has(x.id)?"bad":p.done.has(x.id)?"good":""} ${x.id===q.id?"current":""}" onclick="jumpP(${x.id})">${i+1}</button>`).join("")}
+</div>
+<p class="muted">Hồng: từng trả lời sai · Xanh: đã đúng · Trắng: chưa hoàn thành</p>
+</div>`;
+$("pClocks").classList.toggle("hide",!p.clock);
+}
+function answerP(n){
+if(!P||P.answered||P.paused)return;
+let p=P,q=currentP(),ok=n===q.c;
+p.answered=true;
+p.attempt[q.id]=(p.attempt[q.id]||0)+1;
+saved.seen[q.id]=true;
+if(ok){
+p.done.add(q.id);
+if(p.attempt[q.id]===1)p.first.add(q.id);
+}else{
+p.wrong.add(q.id);saved.wrong[q.id]=true;
+let gap=p.retry==="end"?p.queue.length:+p.retry;
+let at=Math.min(p.i+1+gap,p.queue.length);
+p.queue.splice(at,0,q.id);
+}
+save();
+[...$("answers").children].forEach((b,i)=>{
+b.disabled=true;
+if(i===q.c)b.classList.add("correct");
+else if(i===n)b.classList.add("wrong");
+});
+$("feedback").innerHTML='<div class="feedback">'+
+(ok?"✓ Chính xác!":"✗ Chưa đúng. Đáp án đúng: "+ "ABCD"[q.c]+". Câu sẽ xuất hiện lại, lần "+(p.attempt[q.id]+1)+".")+
+"</div>";
+$("nextP").disabled=false;
+if(p.auto)p.nextAt=Date.now()+p.auto*1000;
+}
+function nextP(){
+if(!P||!P.answered)return;
+P.i++;
+renderP();
+}
+function jumpP(id){
+if(!P||P.answered||P.paused)return;
+let j=P.queue.findIndex((v,i)=>i>=P.i&&v===id);
+if(j<0)return;
+[P.queue[P.i],P.queue[j]]=[P.queue[j],P.queue[P.i]];
+renderP();
+}
+function pauseP(){
+if(!P)return;
+if(!P.paused){
+P.paused=true;P.pauseAt=Date.now();
+$("pauseP").textContent="Tiếp tục";
+$("answers").style.pointerEvents="none";
+}else{
+let d=Date.now()-P.pauseAt;
+P.pausedMs+=d;P.qStart+=d;
+if(P.nextAt)P.nextAt+=d;
+P.paused=false;
+$("pauseP").textContent="Tạm dừng";
+$("answers").style.pointerEvents="auto";
+}
+}
+function finishP(){
+if(!P)return;
+let p=P,seconds=(Date.now()-p.start-p.pausedMs)/1000;
+$("pRun").innerHTML=`
+<div class="card">
+<h2>Kết quả ôn luyện</h2>
+<div class="grid">
+<div class="stat"><b>${p.done.size}</b><small>Câu đã đúng</small></div>
+<div class="stat"><b>${p.wrong.size}</b><small>Câu từng sai</small></div>
+<div class="stat"><b>${fmt(seconds)}</b><small>Tổng thời gian</small></div>
+</div>
+<p>Đúng ngay lần đầu: <b>${p.first.size}/${p.arr.length}</b></p>
+<p>Tổng lượt trả lời: <b>${Object.values(p.attempt).reduce((a,b)=>a+b,0)}</b></p>
+<div class="actions"><button class="btn primary" onclick="resetP()">Ôn luyện lại</button></div>
+</div>`;
+P=null;home();
+}
+function resetP(){
+P=null;$("pRun").classList.add("hide");
+$("pSetup").classList.remove("hide");
+}
+function mark(id){
+if(saved.marked[id])delete saved.marked[id];
+else saved.marked[id]=true;
+save();
+if($("markP"))$("markP").textContent=saved.marked[id]?"★ Đã đánh dấu":"☆ Đánh dấu";
+}
+
+function startExam(){
+let arr=sample(pool($("eTopic").value),$("eCount").value);
+if(!arr.length)return alert("Chưa có câu hỏi");
+E={arr,i:0,answers:{},deadline:Date.now()+Number($("eTime").value)*60000};
+$("eSetup").classList.add("hide");
+$("eRun").classList.remove("hide");
+renderE();
+}
+function renderE(){
+if(!E)return;
+let e=E,q=e.arr[e.i];
+$("eRun").innerHTML=`
+<div class="card">
+<span class="pill">Câu ${e.i+1}/${e.arr.length}</span>
+<p><b>Thời gian còn lại: <span id="examClock">00:00</span></b></p>
+<p class="muted">${esc(q.t)} · Đã trả lời ${Object.keys(e.answers).length}/${e.arr.length}</p>
+<div class="question">${esc(q.q)}</div>
+${q.a.map((a,i)=>`<button class="answer ${e.answers[q.id]===i?"correct":""}" onclick="answerE(${i})">${"ABCD"[i]}. ${esc(a)}</button>`).join("")}
+<div class="actions">
+<button class="btn" onclick="moveE(-1)">Câu trước</button>
+<button class="btn" onclick="moveE(1)">Câu tiếp</button>
+<button class="btn primary" onclick="finishE(false)">Nộp bài</button>
+</div>
+<div class="numbers">
+${e.arr.map((x,i)=>`<button class="num ${e.answers[x.id]!==undefined?"good":""} ${i===e.i?"current":""}" onclick="jumpE(${i})">${i+1}</button>`).join("")}
+</div>
+</div>`;
+}
+function answerE(n){if(!E)return;E.answers[E.arr[E.i].id]=n;renderE()}
+function moveE(d){if(E){E.i=Math.max(0,Math.min(E.arr.length-1,E.i+d));renderE()}}
+function jumpE(i){if(E){E.i=i;renderE()}}
+function finishE(expired){
+if(!E)return;
+if(!expired&&!confirm("Anh muốn nộp bài?"))return;
+let e=E,correct=e.arr.filter(q=>e.answers[q.id]===q.c).length;
+e.arr.forEach(q=>{
+if(e.answers[q.id]!==undefined){
+saved.seen[q.id]=true;
+if(e.answers[q.id]!==q.c)saved.wrong[q.id]=true;
+}
+});
+saved.exams++;save();
+$("eRun").innerHTML=`
+<div class="card">
+<h2>${expired?"Hết giờ làm bài":"Kết quả thi thử"}</h2>
+<div class="grid">
+<div class="stat"><b>${correct}/${e.arr.length}</b><small>Câu đúng</small></div>
+<div class="stat"><b>${Math.round(100*correct/e.arr.length)}%</b><small>Tỷ lệ đúng</small></div>
+<div class="stat"><b>${Object.keys(e.answers).length}</b><small>Đã trả lời</small></div>
+</div>
+<div class="actions"><button class="btn primary" onclick="resetE()">Thi lại</button></div>
+</div>`;
+E=null;home();
+}
+function resetE(){
+E=null;$("eRun").classList.add("hide");
+$("eSetup").classList.remove("hide");
+}
+function review(type){
+let arr=DATA.filter(q=>type==="wrong"?saved.wrong[q.id]:saved.marked[q.id]);
+$("reviewList").innerHTML="<p>"+arr.length+" câu hỏi</p>"+
+(arr.map(q=>`<div class="card"><span class="pill">${esc(q.t)}</span><p><b>${esc(q.q)}</b></p><p class="muted">Đáp án: ${"ABCD"[q.c]}. ${esc(q.a[q.c])}</p></div>`).join("")||"<p>Chưa có câu hỏi.</p>");
+}
+setInterval(()=>{
+let now=Date.now();
+if(P&&!P.paused){
+if($("qClock"))$("qClock").textContent=fmt((now-P.qStart)/1000);
+if($("totalClock"))$("totalClock").textContent=fmt((now-P.start-P.pausedMs)/1000);
+if(P.answered&&P.nextAt&&now>=P.nextAt)nextP();
+}
+if(E){
+let left=Math.max(0,Math.ceil((E.deadline-now)/1000));
+if($("examClock"))$("examClock").textContent=fmt(left);
+if(left===0)finishE(true);
+}
+},200);
+init();
+</script>
+</body>
+</html>
+
