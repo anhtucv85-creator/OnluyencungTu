@@ -6,54 +6,51 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ôn luyện cùng Tú</title>
 <style>
-:root{--red:#80213f;--dark:#58142c;--bg:#f8f4f6;--line:#eadce2}
+:root{--r:#80213f;--d:#59132b;--bg:#f8f4f6}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:#29242a;font:15px/1.5 Arial,sans-serif}
-header{background:linear-gradient(110deg,var(--dark),var(--red));color:white;padding:20px 16px}
+body{margin:0;background:var(--bg);font:15px/1.5 Arial;color:#302730}
+header{background:linear-gradient(120deg,var(--d),var(--r));color:white;padding:20px}
 header h1{margin:0;font-size:23px}
 header small{letter-spacing:2px}
-main{max-width:850px;margin:auto;padding:12px}
-nav{display:flex;gap:6px;overflow-x:auto;padding:8px 0}
+main{max-width:850px;margin:auto;padding:10px}
+nav{display:flex;gap:6px;overflow:auto;padding:8px 0}
 button,select,input{font:inherit}
-nav button{white-space:nowrap;border:1px solid var(--line);background:white;color:var(--red);padding:10px;border-radius:9px}
-nav button.active,.primary{background:var(--red)!important;color:white!important}
-.card{background:white;border:1px solid var(--line);border-radius:15px;padding:16px;margin:10px 0;box-shadow:0 3px 12px #5010270a}
-h2{font-size:20px;margin:0 0 12px}
-h3{font-size:16px}
-label{display:block;margin:12px 0 5px;font-weight:bold}
-select,input[type=text],input[type=password]{width:100%;padding:11px;border:1px solid #d8c9d0;border-radius:9px;background:white}
 button{cursor:pointer}
-.btn{border:1px solid var(--red);border-radius:9px;padding:11px 14px;background:white;color:var(--red);font-weight:bold}
-.primary{border-color:var(--red)}
-.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+nav button,.btn{border:1px solid #dccbd3;border-radius:9px;padding:10px;background:white;color:var(--r)}
+nav button{white-space:nowrap}
+.primary,.active{background:var(--r)!important;color:white!important}
+.card{background:white;padding:16px;border-radius:14px;margin:10px 0;border:1px solid #eadce2}
+h2{margin:0 0 12px;font-size:20px}
+label{display:block;font-weight:bold;margin:12px 0 5px}
+input:not([type=checkbox]),select{width:100%;padding:11px;border:1px solid #d6c7ce;border-radius:9px;background:white}
 .hide{display:none!important}
-.muted{color:#796e76;font-size:13px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.stat{background:#faf0f4;border-radius:10px;text-align:center;padding:12px 5px}
-.stat b{display:block;color:var(--red);font-size:22px}
+.muted{color:#776d74;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.stat{text-align:center;background:#faedf2;border-radius:9px;padding:10px 4px}
+.stat b{display:block;font-size:22px;color:var(--r)}
 .stat small{font-size:11px}
-.clocks{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
-.clock{text-align:center;background:#faf0f4;border-radius:10px;padding:10px}
-.clock b{display:block;font-size:21px;color:var(--red)}
-.clock small{color:#786a72}
+.clocks{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.clock{background:#faedf2;text-align:center;padding:10px;border-radius:9px}
+.clock b{display:block;font-size:22px;color:var(--r)}
+.answer{display:block;width:100%;text-align:left;background:white;border:1px solid #ddd;border-radius:9px;padding:12px;margin:7px 0}
+.correct{background:#dff3e8!important;color:#176a43!important}
+.wrong{background:#ffe0e8!important;color:#a12345!important}
 .question{font-size:18px;font-weight:bold;margin:16px 0}
-.answer{width:100%;display:block;text-align:left;background:white;border:1px solid #ddd1d7;border-radius:10px;padding:12px;margin:7px 0}
-.answer.correct{background:#e5f6ec;border-color:#54a57c;color:#176c45}
-.answer.wrong{background:#ffe9ee;border-color:#d97991;color:#a12344}
-.answer:disabled{opacity:1}
-.pill{display:inline-block;background:#f8e8ee;color:var(--red);padding:5px 10px;border-radius:30px;font-size:12px}
-.numbers{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px;max-height:125px;overflow:auto}
-.num{min-width:35px;height:35px;background:white;border:1px solid #ddd;border-radius:7px}
-.num.bad{background:#ffdce5;color:#9c2440}
-.num.good{background:#ddf4e6;color:#176b45}
-.num.current{outline:2px solid var(--red)}
-.notice{padding:12px;border-radius:10px;background:#fff3d9;margin:10px 0}
-.feedback{background:#f9e9ee;color:var(--red);padding:10px;border-radius:9px;margin-top:10px}
-footer{text-align:center;color:#84757e;font-size:12px;padding:20px}
-@media(max-width:480px){
-main{padding:9px}.card{padding:13px}
-.question{font-size:16px;margin:12px 0}
-.answer{padding:10px;margin:6px 0}
+.actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.notice{background:#fff2d9;padding:12px;border-radius:9px}
+.feedback{background:#f8e5ed;padding:10px;border-radius:9px;margin-top:10px}
+.numbers{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
+.num{min-width:35px;padding:7px;border:1px solid #ddd;border-radius:7px;background:white}
+.num.bad{background:#ffdce5}
+.num.good{background:#def4e6}
+.num.current{outline:2px solid var(--r)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+td,th{padding:7px;border-bottom:1px solid #eee;text-align:left}
+.pill{display:inline-block;background:#f8e6ed;color:var(--r);padding:5px 9px;border-radius:20px;font-size:12px}
+#status{padding:8px;color:var(--r);font-size:13px}
+@media(max-width:500px){
+.card{padding:12px}
+.question{font-size:16px}
 nav button{font-size:12px;padding:9px}
 }
 </style>
@@ -64,44 +61,45 @@ nav button{font-size:12px;padding:9px}
 <small>NGHIỆP VỤ NGÂN HÀNG</small>
 </header>
 <main>
-<nav id="nav">
-<button class="active" onclick="tab('home',this)">Tổng quan</button>
-<button onclick="tab('practice',this)">Ôn luyện</button>
-<button onclick="tab('exam',this)">Thi thử</button>
-<button onclick="tab('review',this)">Câu sai & Đánh dấu</button>
-<button onclick="tab('admin',this)">Quản trị</button>
+<nav>
+<button onclick="show('home',this)" class="active">Tổng quan</button>
+<button onclick="show('practice',this)">Ôn luyện</button>
+<button onclick="show('exam',this)">Thi thử</button>
+<button onclick="show('review',this)">Câu sai & Đánh dấu</button>
+<button onclick="show('admin',this)">Quản trị</button>
 </nav>
+<div id="status">Đang kết nối ngân hàng câu hỏi...</div>
 
 <section id="home">
 <div class="card">
 <span class="pill">Học tập mỗi ngày</span>
 <h2 style="margin-top:12px">Mỗi lần thi, một bước tiến mới</h2>
-<p>Ôn luyện theo chuyên đề, củng cố câu sai và theo dõi kết quả học tập.</p>
+<p>Ôn luyện theo chuyên đề, củng cố câu sai và theo dõi kết quả.</p>
 <div class="actions">
 <button class="btn primary" onclick="go('practice')">Bắt đầu ôn luyện</button>
 <button class="btn" onclick="go('exam')">Thi thử</button>
 </div>
 </div>
 <div class="card">
-<h2>Tổng quan</h2>
+<h2>Ngân hàng câu hỏi</h2>
 <div class="grid">
-<div class="stat"><b id="total">0</b><small>Câu hỏi</small></div>
+<div class="stat"><b id="total">0</b><small>Tổng câu</small></div>
 <div class="stat"><b id="seen">0</b><small>Đã luyện</small></div>
 <div class="stat"><b id="exams">0</b><small>Lượt thi</small></div>
 </div>
 </div>
 <div class="card">
-<h2>Danh sách chuyên đề</h2>
-<div id="topics"></div>
+<h2>Chuyên đề</h2>
+<div id="topicList"></div>
 </div>
 </section>
 
 <section id="practice" class="hide">
-<div class="card" id="pSetup">
+<div id="pSetup" class="card">
 <h2>Thiết lập ôn luyện</h2>
 <label>Chuyên đề</label>
 <select id="pTopic"></select>
-<label>Số lượng câu hỏi</label>
+<label>Số câu</label>
 <select id="pCount">
 <option value="all">Toàn bộ (mặc định)</option>
 <option value="10">10 câu</option>
@@ -109,11 +107,11 @@ nav button{font-size:12px;padding:9px}
 <option value="50">50 câu</option>
 <option value="100">100 câu</option>
 </select>
-<label>Chuyển câu sau khi trả lời</label>
+<label>Tự động chuyển câu</label>
 <select id="pAuto">
-<option value="2">Tự động sau 2 giây (mặc định)</option>
-<option value="5">Tự động sau 5 giây</option>
-<option value="0">Chuyển thủ công</option>
+<option value="2">Sau 2 giây (mặc định)</option>
+<option value="5">Sau 5 giây</option>
+<option value="0">Thủ công</option>
 </select>
 <label>Ôn lại câu sai sau</label>
 <select id="pRetry">
@@ -121,10 +119,10 @@ nav button{font-size:12px;padding:9px}
 <option value="3">3 câu khác</option>
 <option value="10">10 câu khác</option>
 <option value="20">20 câu khác</option>
-<option value="end">Cuối lượt ôn</option>
+<option value="end">Cuối lượt</option>
 </select>
-<label><input type="checkbox" id="pRandom" checked> Trộn câu hỏi</label>
-<label><input type="checkbox" id="pClock" checked> Hiển thị hai đồng hồ</label>
+<label><input id="pRandom" type="checkbox" checked> Trộn câu hỏi</label>
+<label><input id="pClock" type="checkbox" checked> Hiện thời gian từng câu và tổng thời gian</label>
 <div class="actions">
 <button class="btn primary" onclick="startPractice()">Bắt đầu ôn luyện</button>
 </div>
@@ -133,11 +131,11 @@ nav button{font-size:12px;padding:9px}
 </section>
 
 <section id="exam" class="hide">
-<div class="card" id="eSetup">
+<div id="eSetup" class="card">
 <h2>Thi thử</h2>
 <label>Chuyên đề</label>
 <select id="eTopic"></select>
-<label>Số câu hỏi</label>
+<label>Số câu</label>
 <select id="eCount">
 <option value="10">10 câu</option>
 <option value="20">20 câu</option>
@@ -151,9 +149,7 @@ nav button{font-size:12px;padding:9px}
 <option value="30">30 phút</option>
 <option value="60">60 phút</option>
 </select>
-<div class="actions">
 <button class="btn primary" onclick="startExam()">Bắt đầu thi</button>
-</div>
 </div>
 <div id="eRun" class="hide"></div>
 </section>
@@ -162,7 +158,7 @@ nav button{font-size:12px;padding:9px}
 <div class="card">
 <h2>Câu sai & Đánh dấu</h2>
 <div class="actions">
-<button class="btn" onclick="review('wrong')">Câu từng trả lời sai</button>
+<button class="btn" onclick="review('wrong')">Câu từng sai</button>
 <button class="btn" onclick="review('marked')">Câu đánh dấu</button>
 </div>
 <div id="reviewList"></div>
@@ -170,303 +166,547 @@ nav button{font-size:12px;padding:9px}
 </section>
 
 <section id="admin" class="hide">
+<div id="loginBox" class="card">
+<h2>Đăng nhập quản trị</h2>
+<label>Email Admin</label>
+<input id="email" type="email" autocomplete="username">
+<label>Mật khẩu</label>
+<input id="password" type="password" autocomplete="current-password">
+<div class="actions">
+<button class="btn primary" onclick="login()">Đăng nhập</button>
+</div>
+<p id="loginMsg" class="muted"></p>
+</div>
+<div id="adminPanel" class="hide">
 <div class="card">
 <h2>Quản trị ngân hàng câu hỏi</h2>
-<div class="notice">
-<b>Chức năng quản trị chưa kích hoạt.</b>
-GitHub Pages không hỗ trợ đăng nhập và lưu ngân hàng câu hỏi bảo mật bằng HTML đơn thuần.
-Cần kết nối dịch vụ xác thực và cơ sở dữ liệu trước khi cho phép nhập Excel, sửa, xóa hoặc xuất câu hỏi.
+<p id="adminEmail" class="muted"></p>
+<button class="btn" onclick="logout()">Đăng xuất</button>
 </div>
-<label>Tên đăng nhập</label>
-<input type="text" placeholder="Tài khoản Admin" disabled>
-<label>Mật khẩu</label>
-<input type="password" placeholder="Chưa kích hoạt" disabled>
+<div class="card">
+<h2>Nhập câu hỏi Excel</h2>
+<p class="muted">Hỗ trợ .xlsx, .xls, .csv. Mỗi dòng là một câu hỏi.</p>
+<label>Chuyên đề nhập</label>
+<select id="importTopic"></select>
+<label>Tệp Excel</label>
+<input type="file" id="excelFile" accept=".xlsx,.xls,.csv">
 <div class="actions">
-<button class="btn primary" disabled>Đăng nhập</button>
+<button class="btn" onclick="previewExcel()">Xem trước dữ liệu</button>
+<button class="btn primary" onclick="importExcel()">Lưu câu hỏi lên Supabase</button>
 </div>
-<p class="muted">Bản hiện tại sử dụng câu hỏi minh họa, không chứa mật khẩu quản trị.</p>
+<p id="importMsg"></p>
+<div id="preview"></div>
+</div>
+<div class="card">
+<h2>Thêm chuyên đề</h2>
+<input id="newTopic" placeholder="Tên chuyên đề mới">
+<div class="actions">
+<button class="btn primary" onclick="addTopic()">Thêm chuyên đề</button>
+</div>
+</div>
+<div class="card">
+<h2>Quản lý câu hỏi</h2>
+<p class="muted">Xem, sửa, xóa câu hỏi đã nhập.</p>
+<button class="btn" onclick="loadAdminQuestions()">Tải danh sách</button>
+<div id="adminQuestions"></div>
+</div>
 </div>
 </section>
-
-<footer>Ôn luyện cùng Tú · Phiên bản thử nghiệm</footer>
 </main>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <script>
 "use strict";
-const $=id=>document.getElementById(id);
-const DATA=[
-{id:1,t:"Tín dụng",q:"Mục đích quan trọng của thẩm định tín dụng là gì?",a:["Đánh giá khả năng trả nợ và rủi ro","Chỉ kiểm tra tên khách hàng","Tự động duyệt mọi khoản vay","Bỏ qua mục đích sử dụng vốn"],c:0},
-{id:2,t:"Tín dụng",q:"Kiểm tra sử dụng vốn vay nhằm mục đích gì?",a:["Xác định vốn được sử dụng đúng mục đích","Thay thế việc thẩm định","Không cần theo dõi khoản vay","Tự động tăng hạn mức"],c:0},
-{id:3,t:"Thẩm định",q:"Yếu tố nào quan trọng khi đánh giá khả năng trả nợ?",a:["Dòng tiền của khách hàng","Chỉ dựa vào doanh thu","Chỉ dựa vào số nhân viên","Không cần xem xét chi phí"],c:0},
-{id:4,t:"Thẩm định",q:"Khi phân tích báo cáo tài chính nên làm gì?",a:["Đối chiếu và đánh giá tính hợp lý","Chỉ xem một chỉ tiêu","Bỏ qua biến động","Chỉ dựa vào lời trình bày"],c:0},
-{id:5,t:"Xử lý nợ",q:"Khi khoản vay có dấu hiệu rủi ro cần làm gì?",a:["Theo dõi và xử lý theo quy định","Bỏ qua cảnh báo","Tự ý xóa dư nợ","Ngừng lưu hồ sơ"],c:0},
-{id:6,t:"Thanh toán quốc tế",q:"Trong thanh toán quốc tế cần chú ý điều gì?",a:["Kiểm tra chứng từ và điều kiện giao dịch","Bỏ qua điều khoản thanh toán","Không cần xác minh thông tin","Chỉ xem số tiền"],c:0},
-{id:7,t:"Kế hoạch & QLRR",q:"Mục tiêu của quản trị rủi ro là gì?",a:["Nhận diện, đánh giá và kiểm soát rủi ro","Loại bỏ mọi hoạt động kinh doanh","Chỉ lập báo cáo cuối năm","Không cần giám sát"],c:0},
-{id:8,t:"Kế hoạch & QLRR",q:"Khi theo dõi chỉ tiêu kinh doanh cần làm gì?",a:["So sánh thực hiện với kế hoạch và phân tích nguyên nhân","Chỉ xem số cuối năm","Bỏ qua biến động","Không cần đề xuất giải pháp"],c:0},
-{id:9,t:"Kế toán",q:"Đối chiếu số liệu kế toán nhằm mục đích gì?",a:["Phát hiện và xử lý chênh lệch","Thay thế mọi kiểm soát","Không cần chứng từ","Tự động xóa sai sót"],c:0},
-{id:10,t:"Kế toán",q:"Nguyên tắc quan trọng trong hạch toán là gì?",a:["Chính xác, đầy đủ và đúng quy định","Ghi nhận theo cảm tính","Bỏ qua chứng từ","Không cần kiểm tra"],c:0}
-];
 
-const KEY="onluyencungtu_progress_v2";
-let saved={seen:{},wrong:{},marked:{},exams:0};
-try{
-let old=JSON.parse(localStorage.getItem(KEY));
-if(old&&typeof old==="object")saved={...saved,...old};
-}catch(e){}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}}
-function fmt(s){
+const URL="https://njsxrtbkkxqfigiobjln.supabase.co";
+const KEY="sb_publishable_qIJjxYpqHbyzLL7svi2P7w_GukgwcZ7";
+const db=window.supabase.createClient(URL,KEY);
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({
+"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+}[c]));
+const fmt=s=>{
 s=Math.max(0,Math.floor(s));
-return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
+return String(Math.floor(s/60)).padStart(2,"0")+":"+
+String(s%60).padStart(2,"0");
+};
+let topics=[],catalog=[],P=null,E=null,admin=false;
+let progress={seen:{},wrong:{},marked:{},exams:0};
+try{
+progress={...progress,...JSON.parse(localStorage.getItem("tuprogress")||"{}")};
+}catch(e){}
+function save(){
+localStorage.setItem("tuprogress",JSON.stringify(progress));
 }
-function esc(s){
-return String(s).replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[x]));
-}
-function pool(t){return DATA.filter(x=>t==="all"||x.t===t)}
-function sample(a,n,shuffle=true){
+function status(s){$("status").textContent=s}
+function shuffle(a){
 a=[...a];
-if(shuffle)for(let i=a.length-1;i>0;i--){
+for(let i=a.length-1;i>0;i--){
 let j=Math.floor(Math.random()*(i+1));
 [a[i],a[j]]=[a[j],a[i]];
 }
-return a.slice(0,n==="all"?a.length:Math.min(+n,a.length));
+return a;
 }
-function tab(id,button){
+function show(id,button){
 document.querySelectorAll("main section").forEach(x=>x.classList.add("hide"));
 $(id).classList.remove("hide");
 document.querySelectorAll("nav button").forEach(x=>x.classList.remove("active"));
 if(button)button.classList.add("active");
-if(id==="home")home();
 if(id==="review")review("wrong");
 window.scrollTo(0,0);
 }
 function go(id){
 let b=[...document.querySelectorAll("nav button")].find(x=>x.getAttribute("onclick").includes("'"+id+"'"));
-tab(id,b);
+show(id,b);
 }
-function home(){
-$("total").textContent=DATA.length;
-$("seen").textContent=Object.keys(saved.seen).length;
-$("exams").textContent=saved.exams;
-$("topics").innerHTML=[...new Set(DATA.map(x=>x.t))].map(t=>"<p><b>"+esc(t)+"</b> — "+pool(t).length+" câu</p>").join("");
+async function rpc(name,args={}){
+let {data,error}=await db.rpc(name,args);
+if(error)throw error;
+return data;
 }
-function init(){
-let opts='<option value="all">Tất cả chuyên đề</option>'+
-[...new Set(DATA.map(x=>x.t))].map(t=>'<option value="'+esc(t)+'">'+esc(t)+'</option>').join("");
-$("pTopic").innerHTML=opts;
-$("eTopic").innerHTML=opts;
-home();
+async function refresh(){
+try{
+topics=await rpc("quiz_topics");
+catalog=await rpc("quiz_catalog");
+let options='<option value="all">Tất cả chuyên đề</option>'+
+topics.map(t=>`<option value="${t.id}">${esc(t.name)} (${t.question_count})</option>`).join("");
+$("pTopic").innerHTML=options;
+$("eTopic").innerHTML=options;
+$("importTopic").innerHTML=topics.map(t=>
+`<option value="${t.id}">${esc(t.name)}</option>`).join("");
+$("total").textContent=catalog.length;
+$("seen").textContent=Object.keys(progress.seen).length;
+$("exams").textContent=progress.exams;
+$("topicList").innerHTML=topics.map(t=>
+`<p>${esc(t.name)} — <b>${t.question_count} câu</b></p>`).join("");
+status("Đã kết nối Supabase · "+catalog.length+" câu hỏi");
+}catch(e){
+status("Lỗi kết nối: "+e.message);
+}
+}
+async function fetchQuestion(id){
+let a=await rpc("quiz_question",{p_id:id});
+if(!a||!a.length)throw Error("Không tìm thấy câu hỏi");
+let q=a[0];
+return {...q,options:[
+q.option_a,q.option_b,q.option_c,q.option_d
+]};
+}
+function choose(topic,count,random=true){
+let a=catalog.filter(x=>topic==="all"||String(x.topic_id)===String(topic));
+if(random)a=shuffle(a);
+return a.slice(0,count==="all"?a.length:+count);
+}
+let timer=setInterval(tick,200);
+function tick(){
+let now=Date.now();
+if(P&&!P.paused){
+if($("qClock"))$("qClock").textContent=fmt((now-P.qStart)/1000);
+if($("totalClock"))$("totalClock").textContent=fmt((now-P.start-P.pausedMs)/1000);
+if(P.answered&&P.nextAt&&now>=P.nextAt){
+P.nextAt=0;
+nextP();
+}
+}
+if(E){
+let left=Math.max(0,Math.ceil((E.deadline-now)/1000));
+if($("examClock"))$("examClock").textContent=fmt(left);
+if(left===0)finishExam(true);
+}
 }
 
-let P=null,E=null;
-
-function startPractice(){
-let arr=sample(pool($("pTopic").value),$("pCount").value,$("pRandom").checked);
-if(!arr.length)return alert("Chưa có câu hỏi");
+async function startPractice(){
+let arr=choose($("pTopic").value,$("pCount").value,$("pRandom").checked);
+if(!arr.length)return alert("Chuyên đề chưa có câu hỏi. Admin cần nhập Excel trước.");
 P={
-arr,queue:arr.map(q=>q.id),i:0,
-done:new Set(),wrong:new Set(),attempt:{},first:new Set(),
-start:Date.now(),qStart:Date.now(),pausedMs:0,
+arr,queue:arr.map(x=>x.id),i:0,
+done:new Set(),wrong:new Set(),attempt:{},
+start:Date.now(),pausedMs:0,
 auto:+$("pAuto").value,retry:$("pRetry").value,
-clock:$("pClock").checked,answered:false,nextAt:0,
-paused:false,pauseAt:0
+clock:$("pClock").checked,answered:false,
+nextAt:0,paused:false
 };
 $("pSetup").classList.add("hide");
 $("pRun").classList.remove("hide");
-renderP();
+await renderP();
 }
-function currentP(){return DATA.find(x=>x.id===P.queue[P.i])}
-function renderP(){
+async function renderP(){
 if(!P)return;
-if(P.i>=P.queue.length){finishP();return}
-let q=currentP(),p=P;
-p.answered=false;p.nextAt=0;p.qStart=Date.now();
+if(P.i>=P.queue.length)return finishP();
+let p=P,id=p.queue[p.i];
+p.answered=false;p.nextAt=0;
+$("pRun").innerHTML='<div class="card">Đang tải câu hỏi...</div>';
+try{
+let q=await fetchQuestion(id);
+if(P!==p||p.queue[p.i]!==id)return;
+p.q=q;p.qStart=Date.now();
 $("pRun").innerHTML=`
 <div class="card">
-<span class="pill">${esc(q.t)}</span>
-<p class="muted">Đã hoàn thành ${p.done.size}/${p.arr.length} câu · Lần trả lời: ${(p.attempt[q.id]||0)+1}</p>
+<span class="pill">${esc(q.topic_name)}</span>
+<p class="muted">Hoàn thành ${p.done.size}/${p.arr.length} câu · Lần trả lời ${(p.attempt[id]||0)+1}</p>
 <div class="clocks" id="pClocks">
-<div class="clock"><small>Thời gian câu này</small><b id="qClock">00:00</b></div>
-<div class="clock"><small>Tổng thời gian ôn</small><b id="totalClock">00:00</b></div>
+<div class="clock">Thời gian câu này<b id="qClock">00:00</b></div>
+<div class="clock">Tổng thời gian ôn<b id="totalClock">00:00</b></div>
 </div>
-<div class="question">${esc(q.q)}</div>
+<div class="question">${esc(q.question)}</div>
 <div id="answers">
-${q.a.map((a,i)=>`<button class="answer" onclick="answerP(${i})"><b>${"ABCD"[i]}.</b> ${esc(a)}</button>`).join("")}
+${q.options.map((a,i)=>a?`<button class="answer" onclick="answerP(${i})">${"ABCD"[i]}. ${esc(a)}</button>`:"").join("")}
 </div>
 <div id="feedback"></div>
 <div class="actions">
-<button class="btn primary" id="nextP" onclick="nextP()" disabled>Tiếp theo</button>
-<button class="btn" id="markP" onclick="mark(${q.id})">${saved.marked[q.id]?"★ Đã đánh dấu":"☆ Đánh dấu"}</button>
-<button class="btn" id="pauseP" onclick="pauseP()">Tạm dừng</button>
+<button id="nextPBtn" class="btn primary" onclick="nextP()" disabled>Tiếp theo</button>
+<button class="btn" onclick="mark(${id})">${progress.marked[id]?"★ Đã đánh dấu":"☆ Đánh dấu"}</button>
+<button class="btn" id="pauseBtn" onclick="pauseP()">Tạm dừng</button>
 <button class="btn" onclick="finishP()">Kết thúc</button>
 </div>
 <h3>Danh sách câu hỏi</h3>
 <div class="numbers">
-${p.arr.map((x,i)=>`<button class="num ${p.wrong.has(x.id)?"bad":p.done.has(x.id)?"good":""} ${x.id===q.id?"current":""}" onclick="jumpP(${x.id})">${i+1}</button>`).join("")}
+${p.arr.map((x,i)=>`<button class="num ${p.wrong.has(x.id)?"bad":p.done.has(x.id)?"good":""} ${x.id===id?"current":""}" onclick="jumpP(${x.id})">${i+1}</button>`).join("")}
 </div>
-<p class="muted">Hồng: từng trả lời sai · Xanh: đã đúng · Trắng: chưa hoàn thành</p>
 </div>`;
 $("pClocks").classList.toggle("hide",!p.clock);
+}catch(e){
+$("pRun").innerHTML='<div class="card">Lỗi: '+esc(e.message)+'</div>';
 }
-function answerP(n){
-if(!P||P.answered||P.paused)return;
-let p=P,q=currentP(),ok=n===q.c;
+}
+async function answerP(n){
+let p=P;
+if(!p||p.answered||p.paused)return;
 p.answered=true;
-p.attempt[q.id]=(p.attempt[q.id]||0)+1;
-saved.seen[q.id]=true;
-if(ok){
-p.done.add(q.id);
-if(p.attempt[q.id]===1)p.first.add(q.id);
-}else{
-p.wrong.add(q.id);saved.wrong[q.id]=true;
+let id=p.q.id;
+let answer="ABCD"[n];
+try{
+let ok=await rpc("quiz_check",{p_id:id,p_answer:answer});
+if(P!==p)return;
+p.attempt[id]=(p.attempt[id]||0)+1;
+progress.seen[id]=true;
+if(ok)p.done.add(id);
+else{
+p.wrong.add(id);
+progress.wrong[id]=true;
 let gap=p.retry==="end"?p.queue.length:+p.retry;
-let at=Math.min(p.i+1+gap,p.queue.length);
-p.queue.splice(at,0,q.id);
+p.queue.splice(Math.min(p.i+1+gap,p.queue.length),0,id);
 }
 save();
-[...$("answers").children].forEach((b,i)=>{
-b.disabled=true;
-if(i===q.c)b.classList.add("correct");
-else if(i===n)b.classList.add("wrong");
-});
+[...$("answers").children].forEach(b=>b.disabled=true);
+$("answers").children[n].classList.add(ok?"correct":"wrong");
 $("feedback").innerHTML='<div class="feedback">'+
-(ok?"✓ Chính xác!":"✗ Chưa đúng. Đáp án đúng: "+ "ABCD"[q.c]+". Câu sẽ xuất hiện lại, lần "+(p.attempt[q.id]+1)+".")+
+(ok?"✓ Chính xác!":"✗ Chưa đúng. Câu này sẽ xuất hiện lại ở lần "+(p.attempt[id]+1)+".")+
 "</div>";
-$("nextP").disabled=false;
+$("nextPBtn").disabled=false;
 if(p.auto)p.nextAt=Date.now()+p.auto*1000;
+}catch(e){
+p.answered=false;
+alert("Không chấm được: "+e.message);
 }
-function nextP(){
+}
+async function nextP(){
 if(!P||!P.answered)return;
 P.i++;
-renderP();
+await renderP();
 }
-function jumpP(id){
+async function jumpP(id){
 if(!P||P.answered||P.paused)return;
-let j=P.queue.findIndex((v,i)=>i>=P.i&&v===id);
+let j=P.queue.findIndex((x,i)=>i>=P.i&&x===id);
 if(j<0)return;
 [P.queue[P.i],P.queue[j]]=[P.queue[j],P.queue[P.i]];
-renderP();
+await renderP();
 }
 function pauseP(){
 if(!P)return;
 if(!P.paused){
 P.paused=true;P.pauseAt=Date.now();
-$("pauseP").textContent="Tiếp tục";
+$("pauseBtn").textContent="Tiếp tục";
 $("answers").style.pointerEvents="none";
 }else{
 let d=Date.now()-P.pauseAt;
 P.pausedMs+=d;P.qStart+=d;
 if(P.nextAt)P.nextAt+=d;
 P.paused=false;
-$("pauseP").textContent="Tạm dừng";
+$("pauseBtn").textContent="Tạm dừng";
 $("answers").style.pointerEvents="auto";
 }
 }
 function finishP(){
 if(!P)return;
-let p=P,seconds=(Date.now()-p.start-p.pausedMs)/1000;
+let p=P;
 $("pRun").innerHTML=`
 <div class="card">
 <h2>Kết quả ôn luyện</h2>
 <div class="grid">
 <div class="stat"><b>${p.done.size}</b><small>Câu đã đúng</small></div>
 <div class="stat"><b>${p.wrong.size}</b><small>Câu từng sai</small></div>
-<div class="stat"><b>${fmt(seconds)}</b><small>Tổng thời gian</small></div>
+<div class="stat"><b>${fmt((Date.now()-p.start-p.pausedMs)/1000)}</b><small>Thời gian</small></div>
 </div>
-<p>Đúng ngay lần đầu: <b>${p.first.size}/${p.arr.length}</b></p>
-<p>Tổng lượt trả lời: <b>${Object.values(p.attempt).reduce((a,b)=>a+b,0)}</b></p>
-<div class="actions"><button class="btn primary" onclick="resetP()">Ôn luyện lại</button></div>
+<p>Tổng lượt trả lời: ${Object.values(p.attempt).reduce((a,b)=>a+b,0)}</p>
+<button class="btn primary" onclick="resetP()">Ôn luyện lại</button>
 </div>`;
-P=null;home();
+P=null;refresh();
 }
 function resetP(){
 P=null;$("pRun").classList.add("hide");
 $("pSetup").classList.remove("hide");
 }
 function mark(id){
-if(saved.marked[id])delete saved.marked[id];
-else saved.marked[id]=true;
+if(progress.marked[id])delete progress.marked[id];
+else progress.marked[id]=true;
 save();
-if($("markP"))$("markP").textContent=saved.marked[id]?"★ Đã đánh dấu":"☆ Đánh dấu";
 }
 
-function startExam(){
-let arr=sample(pool($("eTopic").value),$("eCount").value);
+async function startExam(){
+let arr=choose($("eTopic").value,$("eCount").value,true);
 if(!arr.length)return alert("Chưa có câu hỏi");
 E={arr,i:0,answers:{},deadline:Date.now()+Number($("eTime").value)*60000};
 $("eSetup").classList.add("hide");
 $("eRun").classList.remove("hide");
-renderE();
+await renderE();
 }
-function renderE(){
+async function renderE(){
 if(!E)return;
-let e=E,q=e.arr[e.i];
+let e=E,id=e.arr[e.i].id;
+$("eRun").innerHTML='<div class="card">Đang tải...</div>';
+try{
+let q=await fetchQuestion(id);
+if(E!==e||e.arr[e.i].id!==id)return;
 $("eRun").innerHTML=`
 <div class="card">
 <span class="pill">Câu ${e.i+1}/${e.arr.length}</span>
-<p><b>Thời gian còn lại: <span id="examClock">00:00</span></b></p>
-<p class="muted">${esc(q.t)} · Đã trả lời ${Object.keys(e.answers).length}/${e.arr.length}</p>
-<div class="question">${esc(q.q)}</div>
-${q.a.map((a,i)=>`<button class="answer ${e.answers[q.id]===i?"correct":""}" onclick="answerE(${i})">${"ABCD"[i]}. ${esc(a)}</button>`).join("")}
+<p>Thời gian còn lại: <b id="examClock"></b></p>
+<div class="question">${esc(q.question)}</div>
+${q.options.map((a,i)=>a?`<button class="answer ${e.answers[id]===i?"correct":""}" onclick="answerE(${i})">${"ABCD"[i]}. ${esc(a)}</button>`:"").join("")}
 <div class="actions">
 <button class="btn" onclick="moveE(-1)">Câu trước</button>
 <button class="btn" onclick="moveE(1)">Câu tiếp</button>
-<button class="btn primary" onclick="finishE(false)">Nộp bài</button>
+<button class="btn primary" onclick="finishExam(false)">Nộp bài</button>
 </div>
 <div class="numbers">
-${e.arr.map((x,i)=>`<button class="num ${e.answers[x.id]!==undefined?"good":""} ${i===e.i?"current":""}" onclick="jumpE(${i})">${i+1}</button>`).join("")}
+${e.arr.map((x,i)=>`<button class="num ${e.answers[x.id]!==undefined?"good":""} ${e.i===i?"current":""}" onclick="jumpE(${i})">${i+1}</button>`).join("")}
 </div>
 </div>`;
+}catch(err){$("eRun").textContent=err.message}
 }
-function answerE(n){if(!E)return;E.answers[E.arr[E.i].id]=n;renderE()}
-function moveE(d){if(E){E.i=Math.max(0,Math.min(E.arr.length-1,E.i+d));renderE()}}
-function jumpE(i){if(E){E.i=i;renderE()}}
-function finishE(expired){
+function answerE(n){
 if(!E)return;
-if(!expired&&!confirm("Anh muốn nộp bài?"))return;
-let e=E,correct=e.arr.filter(q=>e.answers[q.id]===q.c).length;
-e.arr.forEach(q=>{
-if(e.answers[q.id]!==undefined){
-saved.seen[q.id]=true;
-if(e.answers[q.id]!==q.c)saved.wrong[q.id]=true;
+E.answers[E.arr[E.i].id]=n;
+renderE();
 }
-});
-saved.exams++;save();
+function moveE(d){
+if(!E)return;
+E.i=Math.max(0,Math.min(E.arr.length-1,E.i+d));
+renderE();
+}
+function jumpE(i){if(E){E.i=i;renderE()}}
+async function finishExam(expired){
+if(!E)return;
+if(!expired&&!confirm("Nộp bài thi?"))return;
+let e=E;E=null;
+$("eRun").innerHTML='<div class="card">Đang chấm bài...</div>';
+let correct=0;
+for(let q of e.arr){
+let a=e.answers[q.id];
+if(a===undefined)continue;
+try{
+let ok=await rpc("quiz_check",{p_id:q.id,p_answer:"ABCD"[a]});
+if(ok)correct++;
+else progress.wrong[q.id]=true;
+progress.seen[q.id]=true;
+}catch(err){}
+}
+progress.exams++;save();
 $("eRun").innerHTML=`
 <div class="card">
-<h2>${expired?"Hết giờ làm bài":"Kết quả thi thử"}</h2>
+<h2>${expired?"Hết giờ":"Kết quả thi thử"}</h2>
 <div class="grid">
 <div class="stat"><b>${correct}/${e.arr.length}</b><small>Câu đúng</small></div>
 <div class="stat"><b>${Math.round(100*correct/e.arr.length)}%</b><small>Tỷ lệ đúng</small></div>
 <div class="stat"><b>${Object.keys(e.answers).length}</b><small>Đã trả lời</small></div>
 </div>
-<div class="actions"><button class="btn primary" onclick="resetE()">Thi lại</button></div>
+<button class="btn primary" onclick="resetE()">Thi lại</button>
 </div>`;
-E=null;home();
+refresh();
 }
 function resetE(){
 E=null;$("eRun").classList.add("hide");
 $("eSetup").classList.remove("hide");
 }
-function review(type){
-let arr=DATA.filter(q=>type==="wrong"?saved.wrong[q.id]:saved.marked[q.id]);
-$("reviewList").innerHTML="<p>"+arr.length+" câu hỏi</p>"+
-(arr.map(q=>`<div class="card"><span class="pill">${esc(q.t)}</span><p><b>${esc(q.q)}</b></p><p class="muted">Đáp án: ${"ABCD"[q.c]}. ${esc(q.a[q.c])}</p></div>`).join("")||"<p>Chưa có câu hỏi.</p>");
+async function review(type){
+let ids=Object.keys(type==="wrong"?progress.wrong:progress.marked);
+$("reviewList").innerHTML="<p>"+ids.length+" câu hỏi</p>";
+for(let id of ids.slice(0,100)){
+try{
+let q=await fetchQuestion(+id);
+$("reviewList").innerHTML+=`<div class="card">
+<span class="pill">${esc(q.topic_name)}</span>
+<p>${esc(q.question)}</p>
+</div>`;
+}catch(e){}
 }
-setInterval(()=>{
-let now=Date.now();
-if(P&&!P.paused){
-if($("qClock"))$("qClock").textContent=fmt((now-P.qStart)/1000);
-if($("totalClock"))$("totalClock").textContent=fmt((now-P.start-P.pausedMs)/1000);
-if(P.answered&&P.nextAt&&now>=P.nextAt)nextP();
 }
-if(E){
-let left=Math.max(0,Math.ceil((E.deadline-now)/1000));
-if($("examClock"))$("examClock").textContent=fmt(left);
-if(left===0)finishE(true);
+
+async function checkAdmin(){
+let {data:{user}}=await db.auth.getUser();
+admin=false;
+if(user){
+let {data,error}=await db.from("admin_users")
+.select("user_id").eq("user_id",user.id).maybeSingle();
+admin=!!data&&!error;
 }
-},200);
+$("loginBox").classList.toggle("hide",admin);
+$("adminPanel").classList.toggle("hide",!admin);
+$("adminEmail").textContent=user?.email||"";
+}
+async function login(){
+$("loginMsg").textContent="Đang đăng nhập...";
+let {error}=await db.auth.signInWithPassword({
+email:$("email").value.trim(),
+password:$("password").value
+});
+if(error){$("loginMsg").textContent=error.message;return}
+await checkAdmin();
+if(!admin){
+await db.auth.signOut();
+$("loginMsg").textContent="Tài khoản chưa được cấp quyền Admin";
+}
+}
+async function logout(){
+await db.auth.signOut();
+admin=false;
+await checkAdmin();
+}
+async function addTopic(){
+if(!admin)return;
+let name=$("newTopic").value.trim();
+if(!name)return;
+let {error}=await db.from("topics").insert({name});
+if(error)alert(error.message);
+else{
+$("newTopic").value="";
+await refresh();
+alert("Đã thêm chuyên đề");
+}
+}
+
+let pending=[];
+function normalize(s){
+return String(s??"").trim().toLowerCase()
+.normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+.replace(/đ/g,"d").replace(/[^a-z0-9]/g,"");
+}
+function field(row,names){
+let map={};
+Object.keys(row).forEach(k=>map[normalize(k)]=row[k]);
+for(let n of names){
+let v=map[normalize(n)];
+if(v!==undefined&&v!==null)return String(v).trim();
+}
+return "";
+}
+async function previewExcel(){
+if(!admin)return alert("Chưa có quyền Admin");
+let file=$("excelFile").files[0];
+if(!file)return alert("Anh chưa chọn tệp Excel");
+try{
+let bytes=await file.arrayBuffer();
+let wb=XLSX.read(bytes,{type:"array"});
+let rows=[];
+for(let sheet of wb.SheetNames){
+rows.push(...XLSX.utils.sheet_to_json(wb.Sheets[sheet],{defval:""}));
+}
+pending=[];
+let invalid=0;
+for(let row of rows){
+let q=field(row,["Câu hỏi","Cau hoi","Question","Nội dung"]);
+let a=field(row,["A","Đáp án A","Phương án A","Option A"]);
+let b=field(row,["B","Đáp án B","Phương án B","Option B"]);
+let c=field(row,["C","Đáp án C","Phương án C","Option C"]);
+let d=field(row,["D","Đáp án D","Phương án D","Option D"]);
+let correct=field(row,["Đáp án đúng","Đáp án","ĐA đúng","Correct answer","Correct"]);
+correct=correct.toUpperCase().replace(/[^ABCD]/g,"");
+if(!q||!a||!b||!["A","B","C","D"].includes(correct)){
+invalid++;continue;
+}
+pending.push({
+topic_id:+$("importTopic").value,
+question:q,option_a:a,option_b:b,
+option_c:c||null,option_d:d||null,
+correct_answer:correct,
+explanation:field(row,["Giải thích","Explanation"])||null
+});
+}
+$("importMsg").textContent=
+`Đọc ${rows.length} dòng. Hợp lệ: ${pending.length}. Không hợp lệ: ${invalid}.`;
+$("preview").innerHTML=
+`<table><tr><th>Câu hỏi</th><th>Đáp án</th></tr>`+
+pending.slice(0,10).map(x=>
+`<tr><td>${esc(x.question)}</td><td>${esc(x.correct_answer)}</td></tr>`).join("")+
+"</table>";
+}catch(e){$("importMsg").textContent="Lỗi Excel: "+e.message}
+}
+async function importExcel(){
+if(!admin)return;
+if(!pending.length)return alert("Hãy bấm Xem trước dữ liệu trước");
+if(!confirm("Lưu "+pending.length+" câu hỏi lên Supabase?"))return;
+let done=0;
+for(let i=0;i<pending.length;i+=100){
+let chunk=pending.slice(i,i+100);
+let {error}=await db.from("questions").insert(chunk);
+if(error){
+$("importMsg").textContent="Đã lưu "+done+" câu. Lỗi: "+error.message;
+return;
+}
+done+=chunk.length;
+$("importMsg").textContent="Đã lưu "+done+"/"+pending.length+" câu...";
+}
+pending=[];
+$("importMsg").textContent="Đã nhập thành công "+done+" câu hỏi.";
+await refresh();
+}
+async function loadAdminQuestions(){
+if(!admin)return;
+let {data,error}=await db.from("questions")
+.select("id,question,correct_answer")
+.order("id",{ascending:false}).limit(100);
+if(error){alert(error.message);return}
+$("adminQuestions").innerHTML=
+"<p>Hiển thị tối đa 100 câu gần nhất</p>"+
+data.map(q=>`<div class="card">
+<p><b>#${q.id}</b> ${esc(q.question)}</p>
+<p>Đáp án: ${esc(q.correct_answer)}</p>
+<div class="actions">
+<button class="btn" onclick="editQuestion(${q.id})">Sửa</button>
+<button class="btn" onclick="deleteQuestion(${q.id})">Xóa</button>
+</div></div>`).join("");
+}
+async function editQuestion(id){
+if(!admin)return;
+let {data,error}=await db.from("questions")
+.select("*").eq("id",id).single();
+if(error)return alert(error.message);
+let question=prompt("Nội dung câu hỏi",data.question);
+if(question===null)return;
+let correct=prompt("Đáp án đúng A/B/C/D",data.correct_answer);
+if(correct===null)return;
+correct=correct.trim().toUpperCase();
+if(!["A","B","C","D"].includes(correct))return alert("Đáp án không hợp lệ");
+let res=await db.from("questions").update({
+question:question.trim(),correct_answer:correct
+}).eq("id",id);
+if(res.error)alert(res.error.message);
+else{alert("Đã sửa");loadAdminQuestions()}
+}
+async function deleteQuestion(id){
+if(!admin||!confirm("Xóa vĩnh viễn câu hỏi #"+id+"?"))return;
+let {error}=await db.from("questions").delete().eq("id",id);
+if(error)alert(error.message);
+else{await refresh();loadAdminQuestions()}
+}
+
+async function init(){
+await refresh();
+await checkAdmin();
+}
 init();
 </script>
 </body>
 </html>
-
